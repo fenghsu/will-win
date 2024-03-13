@@ -50,7 +50,6 @@ const MaterialList = ({ ...others }) => {
     const { isLoaded } = useSelector((state) => state.basicSetup.item);
     const { rows, setOpen } = others;
 
-    console.log('2.ItemList');
     React.useEffect(() => {
         if (isLoaded == false) {
             dispatch(getItems());

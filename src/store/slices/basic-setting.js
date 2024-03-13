@@ -71,7 +71,6 @@ export function getMaterials() {
     return async () => {
         try {
             const response = await axios.get('https://private-1baef-willwin.apiary-mock.com/material');
-            console.log(response)
             dispatch(slice.actions.getMaterialSuccess(response.data.materiallist));
         } catch (error) {
             dispatch(slice.actions.hasError(error));

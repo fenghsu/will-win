@@ -30,23 +30,18 @@ import { useSelector } from '../../../store/index';
 // ===============================|| UI DIALOG - FORMS ||=============================== //
 
 const FormDialog = ({ ...others }) => {
-    //console.log('dialog is created');
     const theme = useTheme();
     const {open, onClose} = others;
     // get row using useSelector
     const { materialDialogRow: row } = useSelector((state) => state.basicSetup.material);
     
-    console.log("3.MaterialDialogOpen")
-
     const handleClose = () => {
         onClose();
-        console.log("4.MaterialDialogClose")
     };
 
     const callPut = (data) => {
         try {
             axios.put(`https://private-1baef-willwin.apiary-mock.com/material/${row.id}`, data);
-            console.log("5. MaterialSubmit")
             // success, close dialog.
             handleClose();
             // update isLoaded

@@ -49,8 +49,7 @@ const MaterialList = ({ ...others }) => {
     const [selected, setSelected] = React.useState([]);
     const { isLoaded } = useSelector((state) => state.basicSetup.material);
     const { rows, setOpen } = others;
-
-    console.log('2.MaterialList');
+    
     React.useEffect(() => {
         if (isLoaded == false) {
             dispatch(getMaterials());
