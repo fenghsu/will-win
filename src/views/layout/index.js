@@ -8,9 +8,6 @@ import { AppBar, Box, Container, CssBaseline, Toolbar, useMediaQuery } from '@mu
 // project imports
 import Header from './Header/index';
 import Sidebar from './Sidebar/index';
-// import HorizontalBar from './HorizontalBar';
-// import Customization from '../Customization';
-// import Breadcrumbs from 'ui-component/extended/Breadcrumbs';
 
 //import navigation from 'menu-items';
 import LAYOUT_CONST from '../../constant';
@@ -18,9 +15,6 @@ import useConfig from '../../hooks/useConfig';
 import { drawerWidth } from '../../store/constant';
 import { openDrawer } from '../../store/slices/menu';
 import { useDispatch, useSelector } from '../../store/index';
-
-// assets
-//import { IconChevronRight } from '@tabler/icons';
 
 // styles
 const Main = styled('main', { shouldForwardProp: (prop) => prop !== 'open' })(({ theme, open, layout }) => ({
@@ -78,7 +72,6 @@ const MainLayout = () => {
 
     const dispatch = useDispatch();
     const { drawerOpen } = useSelector((state) => state.menu);
-    //const { drawerType, container, layout } = useConfig();
     const { drawerType, container } = useConfig();
     const layout = 'vertical'
     
@@ -125,22 +118,16 @@ const MainLayout = () => {
                 {header}
             </AppBar>
 
-            {/* horizontal menu-list bar */}
-            {/* {layout === LAYOUT_CONST.HORIZONTAL_LAYOUT && !matchDownMd && <HorizontalBar />} */}
-
             {/* drawer */}
             {(layout === LAYOUT_CONST.VERTICAL_LAYOUT || matchDownMd) && <Sidebar />}
 
             {/* main content */}           
             <Main theme={theme} open={drawerOpen} layout={layout}>
                 <Container maxWidth={container ? 'lg' : false} {...(!container && { sx: { px: { xs: 0 } } })}>
-                    {/* breadcrumb
-                    <Breadcrumbs separator={IconChevronRight} navigation={navigation} icon title rightAlign /> */}
                     <Outlet />
                 </Container>
             </Main>
-
-            {/* <Customization /> */}
+            
         </Box>
     );
 };
