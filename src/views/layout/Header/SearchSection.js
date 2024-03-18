@@ -9,7 +9,7 @@ import { Avatar, Box, Card, Grid, InputAdornment, OutlinedInput, Popper } from '
 import PopupState, { bindPopper, bindToggle } from 'material-ui-popup-state';
 
 // project imports
-import Transitions from '../../../ui-component/Transitions';
+import Transitions from '../../../ui-component/extended/Transitions';
 
 
 // assets
