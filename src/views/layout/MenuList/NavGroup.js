@@ -25,7 +25,7 @@ import { FormattedMessage } from 'react-intl';
 import LAYOUT_CONST from '../../../constant';
 import NavItem from './NavItem';
 import useConfig from '../../../hooks/useConfig';
-import Transitions from '../../../ui-component/Transitions';
+import Transitions from '../../../ui-component/extended/Transitions';
 import { dispatch, useSelector } from '../../../store/index';
 import { activeID } from '../../../store/slices/menu';
 
