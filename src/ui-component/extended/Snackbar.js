@@ -5,7 +5,7 @@ import MuiSnackbar from '@mui/material/Snackbar';
 // assets
 import CloseIcon from '@mui/icons-material/Close';
 
-import { useDispatch, useSelector } from 'store';
+import { useDispatch, useSelector } from '../../store/index';
 import { closeSnackbar } from '../../store/slices/snackbar';
 
 // animation function
